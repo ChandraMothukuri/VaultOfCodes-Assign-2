@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Card</title>
+    <link rel="icon" href="images/tresleches-back.jpg">
+
+
+    <style>
+
+        body{
+            overflow: hidden;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .title{
+            width: 100%;
+            height: 10vh;
+            background-color: rgb(43, 46, 47);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .name-title{
+            color: white;
+            font-size: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: -5em;
+            flex-grow: 1;
+        }
+        .title-quote-heading{
+            font-size: 60px;
+            margin-left: 400px;
+        }
+        .title-main-heading:hover{
+            color: red;
+            text-shadow: 0 0 1em red;
+        }
+        .title-quote-heading:hover{
+            color: rgb(255,130,0);
+        }
+        .tags{
+            margin-right: 5em;
+            display: flex;
+            gap: 0.8em;
+            font-size: 80px;
+            color: white;
+        }
+        
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: red;
+            text-shadow: 0 0 1em red;
+        }
+
+
+        .original-body{
+            display: flex;
+        }
+        .body1{
+            display: flex;
+            gap: 12em;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        #ingredients{
+            width: fit-content;
+            max-height: fit-content;
+            background-color: #f4e3c1;
+            border-radius: 100px;
+            font-size: 60px;
+            margin-top: 0;
+            padding: 100px;
+            margin: 0;
+        }
+        .ingredients-data{
+            width: 100%;
+            line-height: 100px;
+        }
+        
+        li:hover{
+            background-color: rgba(255, 246, 229,0.7);
+        }
+       
+        .ul-1{
+            margin-top: 0;
+        }
+        .ingredients_popuped{
+            color: red;
+            text-shadow: 0 0 1em red;
+        }
+        #steps{
+            width: 50%;
+            max-height: fit-content;
+            background-color: #f4e3c1;
+            border-radius: 100px;
+            font-size: 60px;
+            padding: 100px;
+        }
+        .steps-data{
+            line-height: 100px;
+        }
+        .steps_popuped{
+            color: red;
+            text-shadow: 0 0 1em red;
+        }
+        strong{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .tresleches img{
+            width: 1600px;
+            min-height: 90vh;
+            clip-path: ellipse(90% 53% at 100% 50%);
+
+        }
+        .tresleches{
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+            opacity: 0.7;
+        }
+        #button1{
+            width: 400px;
+            height: 150px;
+            font-size: 50px;
+            font-weight: 600;
+            border-radius: 80px;
+            border-color: #f4e3c1;
+            border-style: solid;
+            border-width: 20px;
+            position: absolute;
+            bottom: 300px;
+            left: 400px;
+        }
+        .button1{
+            text-shadow: 0 0 1em red;
+        }
+        #button2{
+            width: 400px;
+            height: 150px;
+            font-size: 50px;
+            font-weight: 600;
+            border-radius: 80px;
+            border-color: #f4e3c1;
+            border-style: solid;
+            border-width: 20px;
+            position: absolute;
+            bottom: 300px;
+            left: 1000px;
+        }
+
+         @media screen and (min-width:320px) and (max-width:375px) {
+
+            .title{
+                height: 8vh;
+            }
+            .name-title{
+                font-size: 20px;
+                width: 100vh;
+                margin-left: -50px;
+            }
+            .title-quote-heading{
+                font-size: 12px;
+                margin-left: 50px;
+            } 
+            .tags{
+                margin-right: 20px;
+                gap: 10px;
+                font-size: 12px;
+                color: white;
+            }
+            .tresleches img{
+                width: 120px;
+                min-height: 30vh;
+                clip-path: ellipse(90% 53% at 100% 50%);
+                margin-right: 1px;
+                position: fixed;
+            }
+            .body1{
+                gap: 12px;
+            
+                display: block;
+            }
+                
+            #ingredients{
+                width: 60%;
+                max-height: fit-content;
+                border-radius: 15px;
+                padding:0px 8px 8px 8px;
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+            .ingredients-heading{
+                font-size: 12px;
+            }
+            
+            strong{
+                gap:6px;
+                margin: 0;
+            }
+            #toggle-arrow{
+                font-size: 10px;
+            }
+            .ingredients-data{
+                line-height: 17px; 
+                font-size: 10px;           
+            }
+
+            .dd1{
+                margin-left: -15px;
+                margin-top: -5px;
+            }
+            .ul-1{
+                margin-bottom: 0;
+            }
+
+            .ingredients-row1{
+                display: flex;
+                width: 200px;
+            }
+            .ingredients-row2{
+                display: flex;
+                width: 135px;
+            }  
+            #steps{
+                width: 88%;
+                max-height: fit-content;
+                border-radius: 15px;
+                font-size: 12px;
+                padding:3px 12px 0.2px 12px;
+                margin-left: 12px;
+            }
+            .Steps-heading{
+                margin: 5px 0 0 0;
+                font-size: 12px;
+            }
+            .steps-data{
+                line-height: 17px;
+            }
+            .dd2{
+                margin-left: -15px;
+                margin-top: -5px;
+            }
+                
+            #button1{
+                width: 100px;
+                height: 30px;
+                font-size: 12px;
+                border-style: solid;
+                border-width: 2px;
+                bottom: 5px;
+                left: 30px;
+            }  
+            #button2{
+                width: 70px;
+                height: 30px;
+                font-size: 12px;
+                font-weight: 600;
+                border-width: 2px;
+                bottom: 5px;
+                left: 150px;
+            }    
+
+        }
+      
+        @media screen and (min-width:375px) and (max-width:426px) {
+
+            .title{
+                height: 8vh;
+            }
+            .name-title{
+                font-size: 20px;
+                width: 100vh;
+                margin-left: -50px;
+            }
+            .title-quote-heading{
+                font-size: 12px;
+                margin-left: 50px;
+            } 
+            .tags{
+                margin-right: 20px;
+                gap: 10px;
+                font-size: 12px;
+                color: white;
+            }
+            .tresleches img{
+                width: 120px;
+                min-height: 30vh;
+                clip-path: ellipse(90% 53% at 100% 50%);
+                margin-right: 1px;
+                position: fixed;
+            }
+            .body1{
+                gap: 12px;
+               
+                display: block;
+            }
+                
+            #ingredients{
+                width: 60%;
+                max-height: fit-content;
+                border-radius: 15px;
+                padding:0px 8px 8px 8px;
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+            .ingredients-heading{
+                font-size: 14px;
+            }
+            strong{
+                gap:6px;
+                margin: 0;
+            }
+            #toggle-arrow{
+                font-size: 10px;
+            }
+            .ingredients-data{
+                line-height: 17px; 
+                font-size: 10px;           
+            }
+            
+            .dd1{
+                margin-left: -15px;
+                margin-top: -5px;
+            }
+            .ul-1{
+                margin-bottom: 0;
+            }
+            
+            .ingredients-row1{
+                display: flex;
+                width: 200px;
+            }
+            .ingredients-row2{
+                display: flex;
+                width: 135px;
+            }  
+            #steps{
+                width: 88%;
+                max-height: fit-content;
+                border-radius: 15px;
+                font-size: 12px;
+                padding:3px 12px 3px 12px;
+                margin-left: 12px;
+            }
+            .Steps-heading{
+                margin: 10px 0 0 0;
+                font-size: 14px;
+            }
+            .steps-data{
+                line-height: 17px;
+            }
+            .dd2{
+                margin-left: -15px;
+                margin-top: -5px;
+            }
+                 
+            #button1{
+                width: 100px;
+                height: 30px;
+                font-size: 12px;
+                border-style: solid;
+                border-width: 2px;
+                bottom: 15px;
+                left: 30px;
+            }  
+            #button2{
+                width: 70px;
+                height: 30px;
+                font-size: 12px;
+                font-weight: 600;
+                border-width: 2px;
+                bottom: 15px;
+                left: 150px;
+            }    
+            
+        }
+
+        @media screen and (min-width:426px) and (max-width:768px) {
+
+            .title{
+                height: 10vh;
+            }
+            .name-title{
+                font-size: 35px;
+                width: 100vh;
+                margin-left: -50px;
+            }
+            .title-quote-heading{
+                font-size: 17px;
+                margin-left: 50px;
+            } 
+            .tags{
+                margin-right: 30px;
+                gap: 10px;
+                font-size: 25px;
+                color: white;
+            }
+            .tresleches img{
+                width: 250px;
+                min-height: 35vh;
+                clip-path: ellipse(90% 53% at 100% 50%);
+                margin-right: 1px;
+                position: fixed;
+            }
+            .body1{
+                gap: 12px;
+                display: block;
+            }
+                
+            #ingredients{
+                width: 55%;
+                max-height: fit-content;
+                border-radius: 15px;
+                padding:0px 10px 10px 20px;
+                margin-left: 30px;
+                margin-top: 25px;
+            }
+            .ingredients-heading{
+                font-size: 25px;
+            }
+            strong{
+                gap:6px;
+                margin: 0;
+            }
+            #toggle-arrow{
+                font-size: 12px;
+            }
+            .ingredients-data{
+                line-height: 25px; 
+                font-size: 19px;           
+            }
+
+            .dd1{
+                margin-left: -15px;
+                margin-top: -15px;
+            }
+            .ul-1{
+                margin-bottom: 0;
+            }
+
+            .ingredients-row1{
+                display: flex;
+                width: 200px;
+            }
+            .ingredients-row2{
+                display: flex;
+            }  
+            .ingredients-row2 li:nth-child(1){
+                width: 110px;
+            }
+            #steps{
+                width: 88%;
+                max-height: fit-content;
+                border-radius: 15px;
+                font-size: 12px;
+                padding:3px 12px 3px 12px;
+                margin-left: 12px;
+                margin-top: 30px;
+            }
+            .Steps-heading{
+                margin: 10px 0 0 0;
+                font-size: 25px;
+            }
+            .steps-data{
+                line-height: 25px;
+                font-size: 19px;           
+
+            }
+            .dd2{
+                margin-left: -15px;
+                margin-top: -5px;
+            }
+                
+            #button1{
+                width: 120px;
+                height: 35px;
+                font-size: 14px;
+                border-style: solid;
+                border-width: 2px;
+                bottom: 30px;
+                left: 80px;
+            }  
+            #button2{
+                width: 90px;
+                height: 35px;
+                font-size: 14px;
+                font-weight: 600;
+                border-width: 2px;
+                bottom: 30px;
+                left: 250px;
+            }    
+
+        }
+
+        @media screen and (min-width:768px) and (max-width:1024px) {
+
+            .title{
+                height: 10vh;
+            }
+            .name-title{
+                font-size: 35px;
+                width: 100vh;
+                margin-left: -50px;
+            }
+            .title-quote-heading{
+                font-size: 17px;
+                margin-left: 50px;
+            } 
+            .tags{
+                margin-right: 30px;
+                gap: 10px;
+                font-size: 22px;
+                color: white;
+            }
+            .tresleches img{
+                width: 250px;
+                min-height: 35vh;
+                clip-path: ellipse(90% 53% at 100% 50%);
+                margin-right: 1px;
+                position: fixed;
+            }
+            .body1{
+                gap: 12px;
+                display: block;
+            }
+                
+            #ingredients{
+                width: 45%;
+                max-height: fit-content;
+                border-radius: 15px;
+                padding:0px 10px 12px 20px;
+                margin-left: 30px;
+                margin-top: 25px;
+            }
+            .ingredients-heading{
+                font-size: 22px;
+            }
+            strong{
+                gap:6px;
+                margin: 0;
+            }
+            #toggle-arrow{
+                font-size: 12px;
+            }
+            .ingredients-data{
+                line-height: 25px; 
+                font-size: 17.5px;           
+            }
+
+            .dd1{
+                margin-left: -15px;
+                margin-top: -15px;
+            }
+            .ul-1{
+                margin-bottom: 0;
+            }
+
+            .ingredients-row1{
+                display: flex;
+                width: 200px;
+            }
+            .ingredients-row2{
+                display: flex;
+            }  
+            .ingredients-row2 li:nth-child(1){
+                width: 110px;
+            }
+            #steps{
+                width: 88%;
+                max-height: fit-content;
+                border-radius: 15px;
+                font-size: 12px;
+                padding:3px 12px 3px 12px;
+                margin-left: 12px;
+                margin-top: 30px;
+            }
+            .Steps-heading{
+                margin: 10px 0 0 0;
+                font-size: 22px;
+            }
+            .steps-data{
+                line-height: 25px;
+                font-size: 17.5px;           
+
+            }
+            .dd2{
+                margin-left: 5px;
+                margin-top: -5px;
+            }
+                
+            #button1{
+                width: 120px;
+                height: 35px;
+                font-size: 14px;
+                border-style: solid;
+                border-width: 2px;
+                bottom: 30px;
+                left: 80px;
+            }  
+            #button2{
+                width: 90px;
+                height: 35px;
+                font-size: 14px;
+                font-weight: 600;
+                border-width: 2px;
+                bottom: 30px;
+                left: 250px;
+            }    
+
+        }
+
+        @media screen and (min-width:1024px) and (max-width:1440px) {
+
+            .title{
+                height: 10vh;
+            }
+            .name-title{
+                font-size: 35px;
+                width: 100vh;
+                margin-left: -50px;
+            }
+            .title-quote-heading{
+                font-size: 17px;
+                margin-left: 50px;
+            } 
+            .tags{
+                margin-right: 30px;
+                gap: 10px;
+                font-size: 22px;
+                color: white;
+            }
+            .tresleches img{
+                width: 250px;
+                min-height: 35vh;
+                clip-path: ellipse(90% 53% at 100% 50%);
+                margin-right: 1px;
+                position: fixed;
+            }
+            .body1{
+                gap: 12px;
+                display: block;
+            }
+                
+            #ingredients{
+                width: 35%;
+                max-height: fit-content;
+                border-radius: 15px;
+                padding:10px 0px 25px 20px;
+                margin-left: 30px;
+                margin-top: 25px;
+            }
+            .ingredients-heading{
+                font-size: 24px;
+            }
+            strong{
+                gap:6px;
+                margin: 0;
+            }
+            #toggle-arrow{
+                font-size: 20px;
+            }
+            .ingredients-data{
+                line-height: 25px; 
+                font-size: 19px;           
+            }
+
+            .dd1{
+                margin-left: -15px;
+                margin-top: -15px;
+            }
+            .ul-1{
+                margin-bottom: 0;
+            }
+
+            .ingredients-row1{
+                display: flex;
+                width: 200px;
+            }
+            .ingredients-row2{
+                display: flex;
+            }  
+            .ingredients-row2 li:nth-child(1){
+                width: 110px;
+            }
+            #steps{
+                width: 88%;
+                max-height: fit-content;
+                border-radius: 15px;
+                font-size: 12px;
+                padding:10px 10px 10px 12px;
+                margin-left: 12px;
+                margin-top: 30px;
+            }
+            .Steps-heading{
+                margin: 10px 0 0 0;
+                font-size: 24px;
+            }
+            .steps-data{
+                line-height: 28px;
+                font-size: 19px;    
+
+            }
+            .dd2{
+                margin-left: 5px;
+                margin-top: -5px;
+            }
+                
+            #button1{
+                width: 150px;
+                height: 45px;
+                font-size: 17px;
+                border-style: solid;
+                border-width: 4px;
+                bottom: 50px;
+                left: 80px;
+            }  
+            #button2{
+                width: 100px;
+                height: 45px;
+                font-size: 17px;
+                font-weight: 600;
+                border-width: 4px;
+                bottom: 50px;
+                left: 300px;
+            }    
+
+        }
+
+        @media screen and (min-widt:1440px) and (max-widt:2560px) {
+
+            .title{
+                height: 10vh;
+            }
+            .name-title{
+                font-size: 35px;
+                width: 100vh;
+                margin-left: -50px;
+            }
+            .title-quote-heading{
+                font-size: 17px;
+                margin-left: 50px;
+            } 
+            .tags{
+                margin-right: 30px;
+                gap: 10px;
+                font-size: 22px;
+                color: white;
+            }
+            .tresleches img{
+                width: 250px;
+                min-height: 35vh;
+                clip-path: ellipse(90% 53% at 100% 50%);
+                margin-right: 1px;
+                position: fixed;
+            }
+            .body1{
+                gap: 12px;
+                display: block;
+            }
+                
+            #ingredients{
+                width: 35%;
+                max-height: fit-content;
+                border-radius: 15px;
+                padding:10px 0px 25px 20px;
+                margin-left: 30px;
+                margin-top: 25px;
+            }
+            .ingredients-heading{
+                font-size: 24px;
+            }
+            strong{
+                gap:6px;
+                margin: 0;
+            }
+            #toggle-arrow{
+                font-size: 20px;
+            }
+            .ingredients-data{
+                line-height: 25px; 
+                font-size: 19px;           
+            }
+
+            .dd1{
+                margin-left: -15px;
+                margin-top: -15px;
+            }
+            .ul-1{
+                margin-bottom: 0;
+            }
+
+            .ingredients-row1{
+                display: flex;
+                width: 200px;
+            }
+            .ingredients-row2{
+                display: flex;
+            }  
+            .ingredients-row2 li:nth-child(1){
+                width: 110px;
+            }
+            #steps{
+                width: 88%;
+                max-height: fit-content;
+                border-radius: 15px;
+                font-size: 12px;
+                padding:10px 10px 10px 12px;
+                margin-left: 12px;
+                margin-top: 30px;
+            }
+            .Steps-heading{
+                margin: 10px 0 0 0;
+                font-size: 24px;
+            }
+            .steps-data{
+                line-height: 28px;
+                font-size: 19px;    
+
+            }
+            .dd2{
+                margin-left: 5px;
+                margin-top: -5px;
+            }
+                
+            #button1{
+                width: 150px;
+                height: 45px;
+                font-size: 17px;
+                border-style: solid;
+                border-width: 4px;
+                bottom: 50px;
+                left: 80px;
+            }  
+            #button2{
+                width: 100px;
+                height: 45px;
+                font-size: 17px;
+                font-weight: 600;
+                border-width: 4px;
+                bottom: 50px;
+                left: 300px;
+            }    
+
+            }
+
+        @media screen and (minwidth:1440px) and (max-width:2560px0) {
+            body{
+            overflow: hidden;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .title{
+            width: 100%;
+            height: 10vh;
+            background-color: rgb(43, 46, 47);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .name-title{
+            color: white;
+            font-size: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: -5em;
+            flex-grow: 1;
+        }
+        .title-quote-heading{
+            font-size: 60px;
+            margin-left: 400px;
+        }
+        .title-main-heading:hover{
+            color: red;
+            text-shadow: 0 0 1em red;
+        }
+        .title-quote-heading:hover{
+            color: rgb(255,130,0);
+        }
+        .tags{
+            margin-right: 5em;
+            display: flex;
+            gap: 0.8em;
+            font-size: 80px;
+            color: white;
+        }
+        
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: red;
+            text-shadow: 0 0 1em red;
+        }
+
+
+        .original-body{
+            display: flex;
+        }
+        .body1{
+            display: flex;
+            gap: 12em;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        #ingredients{
+            width: fit-content;
+            max-height: fit-content;
+            background-color: #f4e3c1;
+            border-radius: 100px;
+            font-size: 60px;
+            margin-top: 0;
+            padding: 100px;
+            margin: 0;
+        }
+        .ingredients-data{
+            width: 100%;
+            line-height: 100px;
+        }
+        
+        li:hover{
+            background-color: rgba(255, 246, 229,0.7);
+        }
+       
+        .ul-1{
+            margin-top: 0;
+        }
+        .ingredients_popuped{
+            color: red;
+            text-shadow: 0 0 1em red;
+        }
+        #steps{
+            width: 50%;
+            max-height: fit-content;
+            background-color: #f4e3c1;
+            border-radius: 100px;
+            font-size: 60px;
+            padding: 100px;
+        }
+        .steps-data{
+            line-height: 100px;
+        }
+        .steps_popuped{
+            color: red;
+            text-shadow: 0 0 1em red;
+        }
+        strong{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .tresleches img{
+            width: 1600px;
+            min-height: 90vh;
+            clip-path: ellipse(90% 53% at 100% 50%);
+
+        }
+        .tresleches{
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+            opacity: 0.7;
+        }
+        #button1{
+            width: 400px;
+            height: 150px;
+            font-size: 50px;
+            font-weight: 600;
+            border-radius: 80px;
+            border-color: #f4e3c1;
+            border-style: solid;
+            border-width: 20px;
+            position: absolute;
+            bottom: 300px;
+            left: 400px;
+        }
+        .button1{
+            text-shadow: 0 0 1em red;
+        }
+        #button2{
+            width: 400px;
+            height: 150px;
+            font-size: 50px;
+            font-weight: 600;
+            border-radius: 80px;
+            border-color: #f4e3c1;
+            border-style: solid;
+            border-width: 20px;
+            position: absolute;
+            bottom: 300px;
+            left: 1000px;
+        }
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    <div class="whole-body">
+
+        <div class="title">
+            <div class="name-title">
+                <div class="title-main-heading">Tres leches</div>
+                <div class="title-quote-heading"> a creamy, milky delight</div>
+            </div>
+            <div class="tags">
+                <div id="Ingredients"> <a href="#ingredients">Ingredients </a></div>
+                <div id="Steps"> <a href="#steps">Steps</a></div>
+                <div id="Try"> <a href="">Try</a></div>
+            </div>
+        </div>
+
+        <div class="original-body">
+            <div class="body1">     
+                <dl id="ingredients"><strong><h2 id="ingredients_popup" class="ingredients-heading">Ingredients</h2><span id="toggle-arrow" style="cursor: pointer;">▼</span></strong> 
+                    <dd class="dd1">
+                        <ul class="ul-1">
+                        <div class="ingredients-row1">
+                            <li class="ingredients-data"><span>Flour</span></li>
+                            <li class="ingredients-data"><span>Eggs</span></li>
+                            <li class="ingredients-data"><span>Salt</span></li>
+                        </div>                        
+                        <div class="ingredients-row2">
+                            <li class="ingredients-data"><span>Sugar</span></li>
+                            <li id="text-changing1" class="ingredients-data">Evaporated Milk</li>
+                        </div>
+                            <li class="ingredients-data">Baking Powder</li>
+                            <li id="text-changing2" class="ingredients-data">Sweetened Condensed Milk</li>
+                            <li id="text-changing3" class="ingredients-data">Whole Milk or Heavy Cream</li>
+                            <li id="text-changing4" class="ingredients-data">Whipped Cream- Often used as a topping</li>
+                            <li id="text-changing5" class="ingredients-data">Vanilla Extract- Adds flavor to the whipped cream</li>
+                        </ul>
+                    </dd>  
+                </dl>
+                
+
+           <dl id="steps"><strong><h2 id="steps_popup" class="Steps-heading">Steps</h2></strong> 
+                    <dd class="dd2">
+                        <ul class="ul-2">
+                           <li id="text-changing6" class="steps-data" class="listed-data">Oven: Set oven to 350°F (175°C) and grease a 9x13 inch pan.</li>
+                           <li id="text-changing7" class="steps-data" class="listed-data">Mix Dry Ingredients: Combine 1 cup flour and 1 ½ tsp baking powder in a bowl.</li>
+                           <li id="text-changing8" class="steps-data" class="listed-data">Cream Butter and Sugar: In another bowl, beat ½ cup softened butter with 1 cup sugar until fluffy.</li>
+                           <li id="text-changing9" class="steps-data" class="listed-data">Add Eggs and Vanilla: Mix in 5 eggs, one at a time, and stir in 1 tsp vanilla extract.</span></li>
+                           <li id="text-changing10" class="steps-data" class="listed-data">Combine Mixtures: Gradually add the flour mixture and ½ cup milk to the wet ingredients until well combined.</li>
+                           <li id="text-changing11" class="steps-data" class="listed-data">Bake: Pour batter into the pan and bake for 25-30 minutes, or until a toothpick comes out clean. Let it cool.</li>
+                           <li id="text-changing12" class="steps-data" class="listed-data">Prepare Milk Mixture: In a bowl, whisk together 1 can (12 oz) evaporated milk, 1 can (14 oz) sweetened condensed milk, and 1 cup whole milk or cream.</li>
+                           <li id="text-changing13" class="steps-data" class="listed-data">Soak Cake: Poke holes in the cooled cake and pour the milk mixture over it. Refrigerate for 4 hours or overnight.</li>
+                           <li id="text-changing14" class="steps-data" class="listed-data">Make Whipped Cream: Whip 1 cup heavy cream with 2 tbsp powdered sugar and 1 tsp vanilla until soft peaks form.</li>
+                           <li id="text-changing15" class="steps-data" class="listed-data">Serve: Spread whipped cream on the cake, garnish with fruit if desired, and enjoy!</li>
+                        </ul>
+                    </dd>
+                </dl> 
+                
+            </div>
+
+            <div class="tresleches"><img src="images/tres-leches-cake-3-scaled.jpg" alt=""></div>
+            <div>
+                <button id="button1">Start cooking</button>
+            </div>
+            <div>
+                <button id="button2">Next</button>
+            </div>
+        </div>
+
+
+    </div>
+
+  
+    <script>
+        const text1 = document.getElementById("text-changing1");
+        const text2 = document.getElementById("text-changing2");
+        const text3 = document.getElementById("text-changing3");
+        const text4 = document.getElementById("text-changing4");
+        const text5 = document.getElementById("text-changing5");
+        const text6 = document.getElementById("text-changing6");
+        const text7 = document.getElementById("text-changing7");
+        const text8 = document.getElementById("text-changing8");
+        const text9 = document.getElementById("text-changing9");     
+        const text10 = document.getElementById("text-changing10");
+        const text11 = document.getElementById("text-changing11");
+        const text12 = document.getElementById("text-changing12");
+        const text13 = document.getElementById("text-changing13");
+        const text14 = document.getElementById("text-changing14");
+        const text15 = document.getElementById("text-changing15");
+
+
+
+    
+        const mediaQuery0 = window.matchMedia("(min-width: 320px) and (max-width: 375px)");
+        const mediaQuery1 = window.matchMedia("(min-width: 375px) and (max-width: 426px)");
+
+        function handleScreenChange() {
+            if (mediaQuery0.matches) { 
+                text1.textContent = "Milk";
+                text4.textContent = "Whipped Cream";
+                text5.textContent = "Venilla Extract";
+                text6.textContent = "Set oven to 350°F and grease a 9x13 inch pan.";
+                text7.textContent = "Mix 1 cup flour and 1½ tsp baking powder in a bowl.";
+                text8.textContent = "In other bowl, mix ½ cup butter with 1 cup sugar until fluffy.";
+                text9.textContent = "Mix 5 eggs, and stir in 1 tsp vanilla extract.";
+                text10.textContent = "Gradually add the flour mixture and ½ cup milk to the ingredients.";
+                text11.textContent = "Pour batter into the pan and bake for 30 minutes. Let it cool.";
+                text12.textContent = "In a bowl, whisk together 1 can evaporated milk, 1 can sweetened condensed milk, and 1 cup whole milk or cream.";
+                text13.textContent = "Poke holes in the cooled cake and pour the milk mixture over it. Refrigerate for 4 hours.";
+                text14.textContent = "Whip 1 cup heavy cream with 2 tbsp powdered sugar and 1 tsp vanilla until soft peaks form.";
+                text15.textContent = "Spread the cream on cake, garnish with fruit.";
+
+             }  else if (mediaQuery1.matches) { 
+                text1.textContent = "Milk";
+                text4.textContent = "Whipped Cream";
+                text5.textContent = "Venilla Extract";
+                text6.textContent = "Set oven to 350°F (175°C) and grease a 9x13 inch pan.";
+                text7.textContent = "Mix 1 cup flour and 1 ½ tsp baking powder in a bowl.";
+                text8.textContent = "In other bowl, mix ½ cup butter with 1 cup sugar until fluffy.";
+                text9.textContent = "Mix in 5 eggs, one at a time, and stir in 1 tsp vanilla extract.";
+                text10.textContent = "Gradually add the flour mixture and ½ cup milk to the ingredients.";
+                text11.textContent = "Pour batter into the pan and bake for 30 minutes. Let it cool.";
+                text12.textContent = "In a bowl, whisk together 1 can (12 oz) evaporated milk, 1 can (14 oz) sweetened condensed milk, and 1 cup whole milk or cream.";
+                text13.textContent = "Poke holes in the cooled cake and pour the milk mixture over it. Refrigerate for 4 hours or overnight.";
+                text14.textContent = "Whip 1 cup heavy cream with 2 tbsp powdered sugar and 1 tsp vanilla until soft peaks form.";
+                text15.textContent = "Spread the cream on cake, garnish with fruit.";
+
+             }
+
+              else {
+                text1.textContent = "Evaporated Milk";
+                text4.textContent = "Whipped Cream- Often used as a topping";
+                text5.textContent = "Venilla Extract- Adds flavor to the whipped cream";
+                text6.textContent = "Oven: Set oven to 350°F (175°C) and grease a 9x13 inch pan.";
+                text7.textContent = "Mix Dry Ingredients: Combine 1 cup flour and 1 ½ tsp baking powder in a bowl.";
+                text8.textContent = "Cream Butter and Sugar: In another bowl, beat ½ cup softened butter with 1 cup sugar until fluffy.";
+                text9.textContent = "Add Eggs and Vanilla: Mix in 5 eggs, one at a time, and stir in 1 tsp vanilla extract.";
+                text10.textContent = "Combine Mixtures: Gradually add the flour mixture and ½ cup milk to the wet ingredients until well combined.";
+                text11.textContent = "Bake: Pour batter into the pan and bake for 25-30 minutes, or until a toothpick comes out clean. Let it cool.";
+                text12.textContent = "Prepare Milk Mixture: In a bowl, whisk together 1 can (12 oz) evaporated milk, 1 can (14 oz) sweetened condensed milk, and 1 cup whole milk or cream.";
+                text13.textContent = "Soak Cake:  holes in the cooled cake and pour the milk mixture over it. Refrigerate for 4 hours or overnight.";
+                text14.textContent = "Make Whipped Cream: Whip 1 cup heavy cream with 2 tbsp powdered sugar and 1 tsp vanilla until soft peaks form.";
+                text15.textContent = "Serve: Spread whipped cream on the cake, garnish with fruit if desired, and enjoy!";
+                
+             }
+        }
+ 
+        
+        
+        text2.remove();
+        text3.remove();
+        handleScreenChange();
+
+        // handleScreenChange(mediaQuery0);
+        // handleScreenChange(mediaQuery1);
+        mediaQuery0.addListener(handleScreenChange);
+        mediaQuery1.addListener(handleScreenChange);
+
+
+
+      
+
+        const Ingre=document.getElementById("Ingredients");
+        const ingre=document.getElementById("ingredients_popup");
+
+        Ingre.addEventListener('click', function() {
+        ingre.classList.add('ingredients_popuped')
+        
+        setTimeout(() => {
+            ingre.classList.remove('ingredients_popuped') 
+        }, 2000);
+        });
+        
+       
+        const Step = document.getElementById("Steps");
+        const step = document.getElementById("steps_popup");
+
+        Step.addEventListener('click', function() {
+        step.classList.add('steps_popuped');
+        setTimeout(() => {
+            step.classList.remove('steps_popuped');
+        }, 2000);
+        });
+
+        let currentStep = 0;
+
+        const steps = document.querySelectorAll('.steps-data');
+
+        const Button1 = document.getElementById("button1");
+        const Button2 = document.getElementById("button2");
+
+        Button1.addEventListener('click', function() {
+            if (currentStep == 0) {
+                steps[currentStep].classList.add('button1'); 
+            }
+        });
+
+        Button2.addEventListener('click', function() {
+            if (currentStep < steps.length - 1) {
+                steps[currentStep].classList.remove('button1'); 
+                currentStep++;
+                steps[currentStep].classList.add('button1'); 
+            }
+            else if(currentStep == steps.length-1){
+                window.alert('Hurry Up! Cake is done!!!')
+                steps[currentStep].classList.remove('button1'); 
+            }
+        });
+
+  
+
+
+
+
+    </script>
+    
+</body>
+</html>
